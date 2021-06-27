@@ -4,6 +4,7 @@
 import os
 import unittest
 import models.user
+from models.base_model import BaseModel
 from models.user import User
 
 
@@ -50,6 +51,16 @@ class Test_Base_Reqeriments(unittest.TestCase):
 
 class Test_User(unittest.TestCase):
     '''Class to test the User class Attributes'''
+    @classmethod
+    def setUpClass(cls):
+        '''Create instance to test the attributes of a class'''
+        cls.user = User()
+
+    @classmethod
+    def tearDownClass(cls):
+        '''Remove the istance after run tests'''
+        del cls.user
+
     def test_inheritance_from_BaseModel(self):
         '''test if User class is a subclas of BaseModel'''
         self.assertTrue(issubclass(type(self.user), BaseModel))
@@ -57,9 +68,9 @@ class Test_User(unittest.TestCase):
     def test_attributes(self):
         '''test if de User class have the attributte and if is str'''
         # Email
-        self.assertTrue(hasattr(self.user, "email")) # Att exists
-        self.assertIsInstance(self.user.email, str)  # Att is string
-        self.assertTrue(self.user.email == "")       # Att is empty
+        self.assertTrue(hasattr(self.user, "email"))    # Att exists
+        self.assertIsInstance(self.user.email, str)     # Att is string
+        self.assertTrue(self.user.email == "")          # Att is empty
         # Password
         self.assertTrue(hasattr(self.user, "password"))
         self.assertIsInstance(self.user.password, str)
