@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Unittest for AirBnB - Console / base
+"""
+Unittest for AirBnB - Console / base
 """
 import os
 import unittest
