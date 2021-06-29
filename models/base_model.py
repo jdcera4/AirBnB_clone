@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Hola"""
 import uuid
+import models
 from datetime import datetime
 
 
@@ -22,7 +23,7 @@ class BaseModel:
 
     def __str__(self):
         """ return string of the instance """
-        str_n = "[BaseModel] ({}) ({})"\
+        str_n = "[BaseModel] ({}) {}"\
             .format(self.id, self.__dict__)
         return str_n
 
