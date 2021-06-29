@@ -1,8 +1,17 @@
 #!/usr/bin/python3
-"""Unittest for AirBnB - Console / file_storage
+"""
+    Unittest for AirBnB - Console / file_storage
 """
 import os
 import unittest
+import json
+from models.base_model import BaseModel
+from models.user import User
+from models.state import Satate
+from models.city import city
+from models.amenity import amenity
+from models.place import Place
+from models.review import Review
 import models.engine.file_storage
 from models.engine.file_storage import FileStorage
 
@@ -64,3 +73,35 @@ class Test_Base_Reqeriments(unittest.TestCase):
         # to_dictionary
         temp = Rectangle.to_dictionary.__doc__
         self.assertTrue(temp is not None and len(temp) > 0)
+
+
+class TestFileStorage(unittest.TestCase):
+    """ Class tests File Storage """
+
+    @classmethod
+    def setUpClass(cls):
+        """set up for test"""
+        cls.user = User()
+        cls.user.first_name = "Kev"
+        cls.user.last_name = "Yo"
+        cls.storage = FileStorage()
+
+    @classmethod
+    def teardown(cls):
+        """at the end of the test this will tear it down"""
+        del cls.user
+
+    def tearDown(self):
+        """teardown"""
+        try:
+            os.remove("file.json")
+        except Exception:
+            pass
+
+    def test_all(self):
+        """tests if all works in File Storage"""
+        storage = FileStorage()
+        obj = storage.all()
+        self.assertIsNotNone(obj)
+        self.assertEqual(type(obj), dict)
+        self.assertIs(obj, storage._FileStorage__objects)
