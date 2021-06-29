@@ -18,6 +18,7 @@ class BaseModel:
             self.id = uuid.uuid4()
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def __str__(self):
         """ return string of the instance """
@@ -28,6 +29,7 @@ class BaseModel:
     def save(self):
         """ save """
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """ convert to dict """
