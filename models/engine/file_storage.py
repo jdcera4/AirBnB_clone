@@ -6,6 +6,7 @@ from models.place import Place
 from models.review import Review
 from models.state import State
 from models.user import User
+from os import path
 import json
 
 
@@ -19,7 +20,7 @@ class FileStorage:
 
     def new(self, obj):
         '''sets in __objects the obj with key <obj class name>.id'''
-        obj_key = "{}.{}".format(obj.__class__.name, obj.id)
+        obj_key = "{}.{}".format(obj.__class__.__name__, obj.id)
         self.__objects[obj_key] = obj
 
     def save(self):
@@ -35,7 +36,10 @@ class FileStorage:
         (only if the JSON file (__file_path) exists;
         otherwise, do nothing. If the file doesn’t exist,
          no exception should be raised)'''
-        if path.exists(self.__file_path):
+        try:
              with open(self.__file_path, mode='r', encoding='utf-8') as f:
-                 for key, value in json.load(f).items():
-                     self.__objects[key] = eval(value["__class__"])
+                 for key, value in (json.load(f)).items():
+                     value = eval(value["__class__"] + "(**value)")
+                     self.__objects[key] = value
+        except FileNotFoundError:
+            pass
