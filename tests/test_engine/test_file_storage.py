@@ -98,6 +98,17 @@ class TestFileStorage(unittest.TestCase):
         except Exception:
             pass
 
+    def test_new(self):
+        """ test when new is created """
+        storage = FileStorage()
+        obj = storage.all()
+        user = User()
+        user.id = 123455
+        user.name = "Kevin"
+        storage.new(user)
+        key = user.__class__.__name__ + "." + str(user.id)
+        self.assertIsNotNone(obj[key])
+
     def test_all(self):
         """tests if all works in File Storage"""
         storage = FileStorage()
