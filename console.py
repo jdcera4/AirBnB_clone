@@ -13,8 +13,8 @@ from models.user import User
 class HBNBCommand(cmd.Cmd):
     ''' Console '''
     prompt = "(hbnb) "
-    __models_list = ['Amenity', 'BaseModel', 'City',
-    'Place', 'Review', 'State', 'User']
+    __models_list = ['Amenity', 'BaseModel',
+                     'City', 'Place', 'Review', 'State', 'User']
     __prev_objects = storage.all()
 
     def do_EOF(self, line):
@@ -89,12 +89,31 @@ class HBNBCommand(cmd.Cmd):
         based or not on the class name. Ex: $ all BaseModel or $ all.'''
         pass
 
-    def to_update(self, arg):
+    def do_update(self, args):
         '''Updates an instance based on the class name and id
         by adding or updating attribute (save the change into
         the JSON file). Ex: $ update BaseModel 1234-1234-1234
         email "aibnb@holbertonschool.com".'''
-        pass
+        if not args:
+            print("** class name missing **")
+        else:
+            my_list = args.split()
+            if my_list[0] not in self.__models_list:
+                print("** class doesn't exist **")
+            elif len(my_list) == 1:
+                print("** instance id missing **")
+            else:
+                key = my_list[0] + '.' + my_list[1]
+                if key not in self.__prev_objects.keys():
+                    print("** no instance found **")
+                elif len(my_list) < 3:
+                    print("** attribute name missing **")
+                elif len(my_list) < 4:
+                    print("** value missing **")
+                else:
+                    self.__prev_objects[key].\
+                        __dict__[my_list[2]] = eval(my_list[3])
+                    storage.save()
 
 
 if __name__ == '__main__':
