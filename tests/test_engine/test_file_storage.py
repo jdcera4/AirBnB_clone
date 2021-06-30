@@ -28,8 +28,7 @@ class Test_Base_Reqeriments(unittest.TestCase):
     def test_pep8_test_base(os_system):
         """PEP8 validation"""
         var = "pep8 tests/test_models/test/test_engine/test_file_storage.py"
-        path = os.system(var)
-        os_system.assertEqual(path, 0)
+        os_system.assertEqual(os.system(var), 0)
 
     def test_shebang(self):
         """First line contains #!/usr/bin/python3"""
