@@ -7,8 +7,8 @@ from models.amenity import Amenity
 
 class Place:
     """ Class for Place """
-    # user_id = User.id
-    # city_id = City.id
+    user_id = User.id
+    city_id = City.id
     name = ""
     description = ""
     number_rooms = 0
@@ -16,4 +16,7 @@ class Place:
     price_by_night = 0
     latitude = 0.0
     longitude = 0.0
-    # amenity_ids = Amenity.id
+    amenity_ids = Amenity.id
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
