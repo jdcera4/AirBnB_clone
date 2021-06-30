@@ -11,6 +11,7 @@ import json
 
 
 class FileStorage:
+    '''class for FileStorage'''
     __file_path = "file.json"
     __objects = {}
 
@@ -37,9 +38,9 @@ class FileStorage:
         otherwise, do nothing. If the file doesn’t exist,
          no exception should be raised)'''
         try:
-             with open(self.__file_path, mode='r', encoding='utf-8') as f:
-                 for key, value in (json.load(f)).items():
-                     value = eval(value["__class__"] + "(**value)")
-                     self.__objects[key] = value
+            with open(self.__file_path, mode='r', encoding='utf-8') as f:
+                for key, value in (json.load(f)).items():
+                    value = eval(value["__class__"] + "(**value)")
+                    self.__objects[key] = value
         except FileNotFoundError:
             pass
