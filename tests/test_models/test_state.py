@@ -64,7 +64,7 @@ class Test_State(unittest.TestCase):
         except Exception:
             pass
 
-     def test_attributes_State(self):
+    def test_attributes_State(self):
         """chekcing if State have attributes"""
         self.assertTrue('id' in self.state.__dict__)
         self.assertTrue('created_at' in self.state.__dict__)
