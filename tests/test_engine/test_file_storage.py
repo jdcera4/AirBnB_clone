@@ -27,20 +27,20 @@ class Test_Base_Reqeriments(unittest.TestCase):
 
     def test_pep8_test_base(os_system):
         """PEP8 validation"""
-        var= "pep8 tests/test_models/test/test_engine/test_file_storage.py"
+        var = "pep8 tests/test_models/test/test_engine/test_file_storage.py"
         path = os.system(var)
         os_system.assertEqual(path, 0)
 
     def test_shebang(self):
         """First line contains #!/usr/bin/python3"""
-        with open('./models file_storage.py', 'r') as fd:
+        with open('./models/engine/file_storage.py', 'r') as fd:
             x = fd.read()
             line = x.splitlines()
             self.assertEqual(line[0], '#!/usr/bin/python3')
 
     def test_shebang_test_base(self):
         """First line contains #!/usr/bin/python3"""
-        with open('./tests/test_models/test file_storage.py', 'r') as fd:
+        with open('./tests/test_engine/test_file_storage.py', 'r') as fd:
             x = fd.read()
             line = x.splitlines()
             self.assertEqual(line[0], '#!/usr/bin/python3')
@@ -71,8 +71,8 @@ class Test_Base_Reqeriments(unittest.TestCase):
         temp = FileStorage.reload.__doc__
         self.assertTrue(temp is not None and len(temp) > 0)
         # to_dictionary
-        temp = Rectangle.to_dictionary.__doc__
-        self.assertTrue(temp is not None and len(temp) > 0)
+        # temp = FileStorage.to_dictionary.__doc__
+        # self.assertTrue(temp is not None and len(temp) > 0)
 
 
 class TestFileStorage(unittest.TestCase):
