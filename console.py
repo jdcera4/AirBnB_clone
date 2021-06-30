@@ -13,9 +13,9 @@ from models.user import User
 class HBNBCommand(cmd.Cmd):
     ''' Console '''
     prompt = "(hbnb) "
-    models_list = ['Amenity', 'BaseModel', 'City',
+    __models_list = ['Amenity', 'BaseModel', 'City',
     'Place', 'Review', 'State', 'User']
-    prev_objects = storage.all()
+    __prev_objects = storage.all()
 
     def do_EOF(self, line):
         ''' Exit the console '''
@@ -34,31 +34,33 @@ class HBNBCommand(cmd.Cmd):
         ''' Creates a new instance of BaseModel,
         saves it (to the JSON file) and prints the id.
         Ex: $ create BaseModel'''
+        arg = args.split(" ")
         if not args:
             print('** class name missing **')
-        elif args not in self.models_list:
+        elif arg[0] not in self.__models_list:
             print('''** class doesn't exist **''')
         else:
             # create basemodel
+            new_obj = eval("{}()".format(arg[0]))
+            new_obj.save()
             # print the ID
-            pass
+            print(new_obj.id)
 
-    def to_show(self, arg):
+    def do_show(self, arg):
         '''Prints the string representation of an instance
         based on the class name and id.'''
         if not arg:
             print('** class name missing **')
         else:
             arg = arg.split()
-            if arg[0] not in self.models_list:
+            if arg[0] not in self.__models_list:
                 print('''** class doesn't exist **''')
-            elif not arg[1]:
+            elif len(arg) == 1:
                 print('** instance id missing **')
             else:
                 obj_name = "{}.{}".format(arg[0], arg[1])
-                if obj_name not in self.prev_objects.keys():
-                    # print string representation
-                    pass
+                if obj_name in self.__prev_objects.keys():
+                    print(self.__prev_objects[obj_name])
                 else:
                     print('** no instance found **')
 
