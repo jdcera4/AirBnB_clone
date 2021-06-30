@@ -77,7 +77,7 @@ class Test_BaseModel(unittest.TestCase):
     def test_instance_attributes(self):
         # id
         self.assertTrue(hasattr(self.baseA, "id"))    # Att exists
-        self.assertIsInstance(self.baseA.id, uuid.UUID)     # Att is string
+        self.assertIsInstance(self.baseA.id, str)     # Att is string
         self.assertNotEqual(self.baseA.id, self.baseB.id)
         # created_at
         self.assertTrue(hasattr(self.baseA, "created_at"))
