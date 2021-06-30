@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Hola"""
 import uuid
+import models
 from datetime import datetime
 from models.engine.file_storage import FileStorage
 
@@ -22,8 +23,8 @@ class BaseModel:
 
     def __str__(self):
         """ return string of the instance """
-        str_n = "[{}] ({}) ({})"\
-            .format(self.__class__.__name__, self.id, self.__dict__)
+        str_n = "[BaseModel] ({}) ({})"\
+            .format(self.id, self.__dict__)
         return str_n
 
     def save(self):
