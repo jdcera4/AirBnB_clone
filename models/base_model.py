@@ -23,7 +23,7 @@ class BaseModel:
 
     def __str__(self):
         """ return string of the instance """
-        str_n = "[{}] ({}) ({})"\
+        str_n = "[{}] ({}) {}"\
             .format(self.__class__.__name__, self.id, self.__dict__)
         return str_n
 
