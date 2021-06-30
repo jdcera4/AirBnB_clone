@@ -7,7 +7,7 @@ import unittest
 import json
 from models.base_model import BaseModel
 from models.user import User
-from models.state import Satate
+from models.state import State
 from models.city import city
 from models.amenity import amenity
 from models.place import Place
