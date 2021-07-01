@@ -18,26 +18,31 @@ class HBNBCommand(cmd.Cmd):
     __prev_objects = storage.all()
 
     def emptyline(self):
-        """ empty line """
+        """ empty line 
+        """
         pass
 
     def do_EOF(self, line):
-        ''' Exit the console '''
+        ''' Exit the console 
+        '''
         print()
         return True
 
     def do_quit(self, line):
-        ''' Quit the console '''
+        ''' Quit the console 
+        '''
         return True
 
     def emptyline(self):
-        ''' Do nothing on empty line '''
+        ''' Do nothing on empty line 
+        '''
         pass
 
     def do_create(self, args):
         ''' Creates a new instance of BaseModel,
         saves it (to the JSON file) and prints the id.
-        Ex: $ create BaseModel'''
+        Ex: $ create BaseModel
+        '''
         arg = args.split(" ")
         if not args:
             print('** class name missing **')
@@ -52,7 +57,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
         '''Prints the string representation of an instance
-        based on the class name and id.'''
+        based on the class name and id.
+        '''
         if not arg:
             print('** class name missing **')
         else:
@@ -71,7 +77,8 @@ class HBNBCommand(cmd.Cmd):
     def do_destroy(self, arg):
         '''Deletes an instance based on the class name
         and id (save the change into the JSON file)
-        Ex: $ destroy BaseModel 1234-1234-1234.'''
+        Ex: $ destroy BaseModel 1234-1234-1234.
+        '''
         if not arg:
             print('** class name missing **')
         else:
@@ -90,14 +97,16 @@ class HBNBCommand(cmd.Cmd):
 
     def to_all(self, arg):
         '''Prints all string representation of all instances
-        based or not on the class name. Ex: $ all BaseModel or $ all.'''
+        based or not on the class name. Ex: $ all BaseModel or $ all.
+        '''
         pass
 
     def do_update(self, args):
         '''Updates an instance based on the class name and id
         by adding or updating attribute (save the change into
         the JSON file). Ex: $ update BaseModel 1234-1234-1234
-        email "aibnb@holbertonschool.com".'''
+        email "aibnb@holbertonschool.com".
+        '''
         if not args:
             print("** class name missing **")
         else:
