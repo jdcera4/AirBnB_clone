@@ -101,17 +101,17 @@ class HBNBCommand(cmd.Cmd):
         my_list = []
         if not line:
             print('** class name missing **')
-        try:
+        else:
             args = line.split(" ")
             if args[0] not in self.__models_list:
-                raise NameError()
+                print("** class doesn't exist **")
             for key in objects:
                 name = key.split('.')
                 if name[0] == args[0]:
                     my_list.append(objects[key])
             print(my_list)
-        except NameError:
-            print("** class doesn't exist **")
+            
+
 
     def do_update(self, args):
         '''Updates an instance based on the class name and id
