@@ -1,4 +1,14 @@
 <h1 class="gap">0x00. AirBnB clone - The console</h1>
+
+<h2>Supported classes:</h2>
+    <li>BaseModel</li>
+    <li>User</li>
+    <li>State</li>
+    <li>Place</li>
+    <li>Review</li>
+    <li>City</li>
+    <li>Amenity</li>
+
 <h2>More Info</h2>
 
 <h3>Execution</h3>
