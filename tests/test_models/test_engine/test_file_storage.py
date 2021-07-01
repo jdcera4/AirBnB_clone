@@ -39,7 +39,8 @@ class Test_Base_Reqeriments(unittest.TestCase):
 
     def test_shebang_test_base(self):
         """First line contains #!/usr/bin/python3"""
-        with open('./tests/test_models/test_engine/test_file_storage.py', 'r') as fd:
+        y = './tests/test_models/test_engine/test_file_storage.py'
+        with open(y, 'r') as fd:
             x = fd.read()
             line = x.splitlines()
             self.assertEqual(line[0], '#!/usr/bin/python3')
