@@ -19,25 +19,20 @@ class HBNBCommand(cmd.Cmd):
     __prev_objects = storage.all()
 
     def emptyline(self):
-        """ empty line 
+        """ empty line
         """
         pass
 
     def do_EOF(self, line):
-        ''' Exit the console 
+        ''' Exit the console
         '''
         print()
         return True
 
     def do_quit(self, line):
-        ''' Quit the console 
+        ''' Quit the console
         '''
         return True
-
-    def emptyline(self):
-        ''' Do nothing on empty line 
-        '''
-        pass
 
     def do_create(self, args):
         ''' Creates a new instance of BaseModel,
