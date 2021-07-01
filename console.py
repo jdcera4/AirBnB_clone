@@ -17,6 +17,10 @@ class HBNBCommand(cmd.Cmd):
                      'City', 'Place', 'Review', 'State', 'User']
     __prev_objects = storage.all()
 
+    def emptyline(self):
+        """ empty line """
+        pass
+
     def do_EOF(self, line):
         ''' Exit the console '''
         print()
