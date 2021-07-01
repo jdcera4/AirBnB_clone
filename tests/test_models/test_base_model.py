@@ -86,9 +86,9 @@ class Test_BaseModel(unittest.TestCase):
         self.assertTrue(hasattr(self.baseA, "updated_at"))
         self.assertIsInstance(self.baseA.updated_at, datetime)
 
-    # def test_str(self):
-        # x = self.baseA.__str__
-        # self.assertTrue(type(x) is str)
+    def test_str(self):
+        x = self.baseA.__str__()
+        self.assertTrue(type(x) is str)
 
     def test_save(self):
         update1 = self.baseA.updated_at
