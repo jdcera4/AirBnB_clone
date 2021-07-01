@@ -33,22 +33,22 @@
 
 <p>To start, navigate to the project folder and enter <b>./console.py</b> in the shell.</p>
  <h4>create</h4>
-    <pre><code>create "class name"</class></code></pre>
+    <pre><code>create "class name"</code></pre>
     <p>EX: </p><code>$ create BaseModel</code>
  <h4>show</h4>
-    <pre><code>show "class name" "id" </class></code></pre>
+    <pre><code>show "class name" "id"</code></pre>
     <p>EX: </p><code>$ show BaseModel 1234-1234-1234</code>
  <h4>destroy</h4>
-    <pre><code>destroy "class name"</class></code></pre>
+    <pre><code>destroy "class name"</code></pre>
     <p>EX: </p><code>$ destroy BaseModel 1234-1234-1234</code>
  <h4>all</h4>
-    <pre><code>all "class name" , or: all</class></code></pre>
+    <pre><code>all "class name" , or: all</code></pre>
     <p>EX: </p> <code>$ all BaseModel</code>
  <h4>update</h4>
-    <pre><code>update "class name" "id" "attribute" "value of attribute" </class></code></pre>
+    <pre><code>update "class name" "id" "attribute" "value of attribute"</code></pre>
     <p>EX: </p> <code>$ update BaseModel 1234-1234-1234 email "aibnb@holbertonschool.com"</code>
  <h4>help</h4>
-    <pre><code>help</class></code></pre>
+    <pre><code>help</code></pre>
     <p>EX: </p> <code>help</code>
 
 <h2>More Info</h2>
