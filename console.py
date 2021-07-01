@@ -9,6 +9,7 @@ from models.review import Review
 from models.state import State
 from models import storage
 from models.user import User
+import parser
 
 
 class HBNBCommand(cmd.Cmd):
@@ -91,21 +92,30 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     print('** no instance found **')
 
-    def to_all(self, arg):
-        '''Prints all string representation of all instances
-        based or not on the class name. Ex: $ all BaseModel or $ all.
-        '''
-        arg1 = arg.parse(arg)
-        if len(arg1) > 0 and arg[0] not in HBNBCommand.__class__:
+    def do_all(self, line):
+        """Prints all string representation of all instances
+        Exceptions:
+            NameError: when there is no object taht has the name
+        """
+        objects = storage.all()
+        my_list = []
+        if not line:
+            for key in objects:
+                my_list.append(objects[key])
+            print(my_list)
+            return
+        try:
+            args = line.split(" ")
+            if args[0] not in self.__models_list:
+                raise NameError()
+            for key in objects:
+                name = key.split('.')
+                if name[0] == args[0]:
+                    my_list.append(objects[key])
+            print(my_list)
+        except NameError:
             print("** class doesn't exist **")
-        else:
-            obj = []
-            for obj1 in storage.all().values():
-                if len(arg1) > 0 and arg[0] == obj.__class__.__name__:
-                    obj1.append(obj.__str__())
-                elif len(arg1) == 0:
-                    obj1.append(obj.__str__())
-            print(obj1)
+
 
     def do_update(self, args):
         '''Updates an instance based on the class name and id
