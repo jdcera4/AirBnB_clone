@@ -1,4 +1,4 @@
-<img src="https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210701%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210701T134534Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5e87ec1d72b65b41632ec75dc2b3f8acbd69b2172fa0d7e571ce115c7e2f57bc" alt="">
+<img src="hbn.png" alt="">
 
 <h1 class="gap">0x00. AirBnB clone - The console</h1>
 
