@@ -22,8 +22,8 @@
 </ul>
 
 <p>To start, navigate to the project folder and enter <b>./console.py</b> in the shell.</p>
- <h3>create</h3>
- <pre><code>create "class name"</class></code></pre><p>EX: </p> <code>create BaseModel</code>
+<h3>create</h3>
+<code>create "class name" </class></code><p>EX: </p> <code>create BaseModel</code>
 
 <h2>More Info</h2>
 
