@@ -100,10 +100,7 @@ class HBNBCommand(cmd.Cmd):
         objects = storage.all()
         my_list = []
         if not line:
-            for key in objects:
-                my_list.append(objects[key])
-            print(my_list)
-            return
+            print('** class name missing **')
         try:
             args = line.split(" ")
             if args[0] not in self.__models_list:
