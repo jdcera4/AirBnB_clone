@@ -65,7 +65,11 @@ class Test_Amenity(unittest.TestCase):
 
     def test_attributes(self):
         '''test if de City class have the attributte and if is str'''
-        # Email
+        # name
         self.assertTrue(hasattr(self.city, "name"))    # Att exists
         self.assertIsInstance(self.city.name, str)     # Att is string
         self.assertTrue(self.city.name == "")          # Att is empty
+        # state_id
+        self.assertTrue(hasattr(self.city, "state_id"))    # Att exists
+        self.assertIsInstance(self.city.state_id, str)     # Att is string
+        self.assertTrue(self.city.state_id == "")          # Att is empty
