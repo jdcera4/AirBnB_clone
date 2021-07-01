@@ -1,4 +1,4 @@
-<img src="hbn.png" alt="">
+<img src="hbnb.png" alt="">
 
 <h1 class="gap">0x00. AirBnB clone - The console</h1>
 
