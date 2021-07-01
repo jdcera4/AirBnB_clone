@@ -95,7 +95,7 @@ class HBNBCommand(cmd.Cmd):
         '''Prints all string representation of all instances
         based or not on the class name. Ex: $ all BaseModel or $ all.
         '''
-        arg1 = parse(arg)
+        arg1 = arg.parse(arg)
         if len(arg1) > 0 and arg[0] not in HBNBCommand.__class__:
             print("** class doesn't exist **")
         else:
