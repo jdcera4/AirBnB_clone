@@ -96,10 +96,11 @@ $
 <p><img src="https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210624%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210624T143900Z&amp;X-Amz-Expires=86400&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=52ec2bc9931ff114669768867a3215d3b423e63ef7c16fce9f1b42b9d21a91dc" alt=""></p>
 
 </div>
+<h2>Flowchart</h2>
+
+<img src="image.png" alt="">
+<br>
 <h2>Authors</h2>
 <p>David Cera jdcera@gmail.com</p>
 <p>Paula Louvani Hernandez paula.louvani@gmail.com</p>
 
-<h2>Flowchart</h2>
-
-<img src="image.png" alt="">
