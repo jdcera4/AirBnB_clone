@@ -99,3 +99,7 @@ $
 <h2>Authors</h2>
 <p>David Cera jdcera@gmail.com</p>
 <p>Paula Louvani Hernandez paula.louvani@gmail.com</p>
+
+<h2>Flowchart</h2>
+
+<img src="image.png" alt="">
