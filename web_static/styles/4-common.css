@@ -9,3 +9,16 @@ body .container {
     max-width: 1000px;
     margin: 30px auto;
 }
+
+@media screen and (max-width: 800px) {
+    #header #top p.like,
+    #header #top p.breadcrumb,
+    #header #top div.vcard p.twitter,
+    #header #top div.vcard p.linkedin,
+    #header #top div.vcard p.delicious,
+    #header #top div.vcard p.google,
+    .vcard h2{ display:none;}
+  }
+@media screen and (max-width: 600px) {
+    #sidebar .twitter {display:none;}
+}
