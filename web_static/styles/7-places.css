@@ -1,9 +1,9 @@
-.places{
+.places {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     padding: 0 20px;
+    margin-bottom: 8%;
 }
 .places h1 {
     width: 100%;
